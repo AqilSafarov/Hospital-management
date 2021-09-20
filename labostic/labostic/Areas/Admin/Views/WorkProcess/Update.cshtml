@@ -1,0 +1,72 @@
+﻿@model Labostic.Models.WorkProcess
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Basic Inputs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Basic Inputs</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div asp-validation-summary="All" style="color:red; margin-bottom:30px;"></div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Question</label>
+                                <input asp-for="Id" hidden />
+
+                                <div class="col-md-10">
+                                    <input asp-for="Icon" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Answer</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Title" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Answer</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Desc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Answer</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Numb" class="form-control">
+                                </div>
+                            </div>
+                            <div class="text-right mt-5">
+                                <a asp-area="admin" asp-controller="WorkProcess" asp-action="index" style="border-radius:6px; padding:12px 19px 15px 14px;" class="button w-24 border text-gray-700 mr-1">Cancel</a>
+                                <button type="submit" style="background:#323584; border:none; padding: 12px 35px 14px 30px; border-radius: 10px ;" class="button w-24 bg-theme-1 text-white">Create</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

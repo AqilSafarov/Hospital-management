@@ -1,0 +1,204 @@
+﻿@model Labostic.Models.Services
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Basic Inputs</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-area="admin" asp-controller="Services" asp-action="update" enctype="multipart/form-data">
+                            <div asp-validation-summary="All" style="color:red; margin-bottom:30px;"></div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Name</label>
+                                <input asp-for="Id" hidden />
+
+                                <div class="col-md-10">
+                                    <input asp-for="Name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+
+                                <label class="col-form-label col-md-2" asp-for="ImageFile">Img</label>
+
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFile" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+
+                                <label class="col-form-label col-md-2" asp-for="ImageFileTwo">Img Two</label>
+
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileTwo" class="input w-full border mt-2">
+
+                                </div>
+                            </div>  <div class="form-group row">
+
+                                <label class="col-form-label col-md-2" asp-for="ImageFileThree">Img Three</label>
+
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileThree" class="input w-full border mt-2">
+
+                                </div>
+                            </div>  <div class="form-group row">
+
+                                <label class="col-form-label col-md-2" asp-for="ImageFileFour">Img Four</label>
+
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileFour" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Title</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Title" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Title Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="TitleTwo" class="form-control">
+                                </div>
+                            </div>  <div class="form-group row">
+                                <label class="col-form-label col-md-2">Title Three</label>
+                                <div class="col-md-10">
+                                    <input asp-for="TitleThree" class="form-control">
+                                </div>
+                            </div>  <div class="form-group row">
+                                <label class="col-form-label col-md-2">Title Four</label>
+                                <div class="col-md-10">
+                                    <input asp-for="TitleFour" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Desc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Desc Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="DescTwo" class="form-control">
+                                </div>
+                            </div> <div class="form-group row">
+                                <label class="col-form-label col-md-2">Desc Three</label>
+                                <div class="col-md-10">
+                                    <input asp-for="DescThree" class="form-control">
+                                </div>
+                            </div> <div class="form-group row">
+                                <label class="col-form-label col-md-2">Desc Four</label>
+                                <div class="col-md-10">
+                                    <input asp-for="DescFour" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Icon" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconTwo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Three</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconThree" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Four</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconFour" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconDesc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Desc Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconDescTwo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Desc Three</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconDescThree" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Desc Four</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconDescFour" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Title</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconTitle" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Title Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconTitleTwo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Title Three</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconTitleThree" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Icon Desc Four</label>
+                                <div class="col-md-10">
+                                    <input asp-for="IconTitleFour" class="form-control">
+                                </div>
+                            </div>
+                            <div class="text-right mt-5">
+                                <a asp-area="admin" asp-controller="Services" asp-action="index" style="border-radius:6px; padding:12px 19px 15px 14px;" class="button w-24 border text-gray-700 mr-1">Cancel</a>
+                                <button type="submit" style="background:#323584; border:none; padding: 12px 35px 14px 30px; border-radius: 10px ;" class="button w-24 bg-theme-1 text-white">Create</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

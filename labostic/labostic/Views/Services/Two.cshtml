@@ -1,0 +1,292 @@
+﻿@model List<Labostic.Models.Services>
+@{
+    ViewData["Title"] = "Two";
+}
+@foreach (var item in Model.Skip(1).Take(1))
+{
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2>@item.Name</h2>
+                    </div>
+                    <div class="breadcrumb">
+                        <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                        <span class="details">Anotomic Pathology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="service-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-menu">
+                        <ul>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="index">Advanced Robotics</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="two">Anatomic Pathology</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="three">Chemical Research</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="four">Chemistry & Hematology</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="five">Environmental Testing</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="six">Lab Test Directory</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="download">
+                        <ul class="download-ul">
+                            <li>
+                                <i class="far fa-file-pdf"></i>
+                                <div class="download-button">
+                                    <h4>Our Brouchers</h4>
+                                    <a href="">Download</a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <i class="far fa-file-pdf"></i>
+                                <div class="download-button">
+                                    <h4>Laboratory Details</h4>
+                                    <a href="">Download</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="how-help">
+                        <div class="bg">
+                            <div class="wrapper">
+                                <div class="inner">
+
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="layer">
+                                    <div class="bglayer"></div>
+                                    <div class="darkgrey">
+                                        <div class="colbg-layer">
+                                            <div class="layer-inner"></div>
+                                        </div>
+                                        <div class="layer-content">
+                                            <div class="icon">
+                                                <i class="fas fa-flask"></i>
+                                            </div>
+                                            <h4>How Can We Help?</h4>
+                                            <p>
+                                                If you need any helps,please feel free to contact us.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <i class="fas fa-phone-alt"></i>
+                                                    +1800-123-456-78
+                                                </li>
+
+                                                <li>
+                                                    <i class="far fa-envelope"></i>
+                                                    <a href="mailto:info@info@laboratory.com">info@laboratory.com</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tag">
+                        <div class="tag-title">
+                            <h3>Popular Tags</h3>
+                        </div>
+                        <div class="tag-squar">
+                            <a href="" class="cloud">Laboratory specimen</a>
+                            <a href="" class="cloud">Wet lab</a>
+                            <a href="" class="cloud">Reagent bottle</a>
+                            <a href="" class="cloud">Gemological</a>
+                            <a href="" class="cloud">Laboratory safety</a>
+                            <a href="" class="cloud">equipment‎</a>
+                            <a href="" class="cloud">Biochemistry research</a>
+                            <a href="" class="cloud">Commercial</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="servicetwo-img">
+                        <img src="/@item.Image" alt="">
+                    </div>
+                    <div class="servicetwo-desc">
+                        <h4>
+                            @item.Title
+                        </h4>
+                        <p>
+                            @item.Desc
+                        </p>
+                        <div class="servicetwo-line">
+                            <span class="holder">
+                                <span class="line"></span>
+
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4>
+                                    @item.TitleTwo
+                                </h4>
+                                <p>
+                                    @item.DescTwo
+
+
+                                </p>
+                                <ul>
+                                    <li>
+                                        <i class="@item.Icon"></i>
+                                        <p>
+                                           @item.IconDesc
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <i class="@item.IconTwo"></i>
+                                        <p>
+                                            @item.IconDescTwo
+                                        </p>
+
+                                    </li>
+                                    <li>
+                                        <i class=" @item.IconThree"></i>
+                                        <p>
+                                            @item.IconDescThree
+                                        </p>
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6" id="neararr">
+                                <div class="picture-neararrow" id="ne">
+                                    <img src="/@item.ImageTwo" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="servicetwo-line">
+                            <span class="holder">
+                                <span class="line"></span>
+
+                            </span>
+                        </div>
+                        <h4>
+                            @item.TitleThree
+
+                        </h4>
+                        <p>
+                            @item.DescThree
+                        </p>
+                        <div class="accordion">
+                            <div class="toggle ">
+                                <div class="custom-title custom-active">
+                                    <h6>
+                                        <i class="fas fa-plus" id="plus"></i>
+                                        <i class="fas fa-minus" id="minus"></i>
+                                        How can i contact Attorney for the cases?
+                                    </h6>
+
+
+                                </div>
+                                <div class="custom-description show">
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toggle">
+                                <div class="custom-title">
+                                    <h6>
+                                        <i class="fas fa-plus" id="plus"></i>
+                                        <i class="fas fa-minus" id="minus"></i>
+                                        What is the process of the criminal cases?
+                                    </h6>
+                                </div>
+                                <div class="custom-description">
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toggle">
+                                <div class="custom-title">
+                                    <h6>
+                                        <i class="fas fa-plus" id="plus"></i>
+                                        <i class="fas fa-minus" id="minus"></i>
+                                        How to take time in the procesing of ragistration?
+                                    </h6>
+                                </div>
+                                <div class="custom-description">
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toggle">
+                                <div class="custom-title">
+                                    <h6>
+                                        <i class="fas fa-plus" id="plus"></i>
+                                        <i class="fas fa-minus" id="minus"></i>
+                                        Who performs the testing on laboratory specimens?
+                                    </h6>
+                                </div>
+                                <div class="custom-description">
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toggle">
+                                <div class="custom-title">
+                                    <h6>
+                                        <i class="fas fa-plus" id="plus"></i>
+                                        <i class="fas fa-minus" id="minus"></i>
+                                        How can i contact Attorney for the cases?
+                                    </h6>
+                                </div>
+                                <div class="custom-description">
+                                    <p>
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry. It has survived not only five centuries, but also
+                                        the leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,167 @@
+﻿@model VmFooter
+@{
+    Layout = null;
+}
+
+<footer>
+ 
+
+    <div class="footer-area">
+        <div class="first-floor">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="address" id="adrs">
+                            <div class="icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="content" id="add">
+                                <h5>Address</h5>
+
+                                <p>@Model.Setting.Address</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="address" id="adrs">
+                            <div class="icon">
+                                <i class="fas fa-phone-alt"></i>
+
+                            </div>
+                            <div class="content" id="addtwo">
+                                <h5>
+                                    Call Us On
+                                </h5>
+
+                                <p>
+                                    @Model.Setting.PhoneNumTwo
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="address" id="adrs">
+                            <div class="icon">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="content" id="addthree">
+                                <h5>
+                                    Email Us
+                                </h5>
+
+                                <p><a href="mailto:@Model.Setting.EmailFooter">@Model.Setting.EmailFooter</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-floor">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+                        <div class="logo">
+                            <img src="@Model.Setting.LogoFooter" alt="">
+                        </div>
+                        <div class="about">
+                            <p>
+                                @Model.Setting.About
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                        <div class="nav-menu">
+                            <h3>Usefull Links</h3>
+                            <ul>    
+                                <ul>
+                                    <li><a asp-controller="home" asp-action="index">Home</a></li>
+                                    <li><a asp-controller="about" asp-action="index">About</a></li>
+                                    <li><a asp-controller="about" asp-action="serviceone">Services</a></li>
+                                    <li><a asp-controller="team" asp-action="index">Team</a></li>
+                                    <li><a asp-controller="contact" asp-action="index">Contact</a></li>
+                                    <li><a asp-controller="contact" asp-action="index">Faq</a></li>
+                                    <li><a asp-controller="research" asp-action="index">Research</a></li>
+                                    <li><a asp-controller="analysis" asp-action="index">Analysis</a></li>
+                                    <li><a asp-controller="service" asp-action="servicetwo">Pathaloghy</a></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                        <div class="recent-post">
+                            <h3>
+                                Recent Posts
+                            </h3>
+                            <ul>
+                                @foreach (var item in Model.Research.Take(2))
+                                {
+                                    <li>
+                                        <a href=""><img src="/image/@item.Image" alt=""></a>
+                                        <span>
+                                            <i class="far fa-calendar-alt"></i>
+                                           @item.Date
+                                        </span>
+                                        <a href="">@item.Title</a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="bottom">
+            <div class="container">
+                <div class="copy-right">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <span>
+                                Copyright © 2019 Labostica Theme by
+                                <a href="https://themetechmount.com/">ThemetechMount</a>
+                            </span>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="social">
+                                <ul class="social-ul">
+                                    <li class="fb">
+                                        <span class="tooltipfb">facebook</span>
+
+                                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li class="lin">
+                                        <span class="tooltiplin">linkedin</span>
+                                        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li class="go">
+                                        <span class="tooltipgo">google</span>
+                                        <a href="https://www.flickr.com/">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                    </li>
+                                    <li class="tw">
+                                        <span class="tooltiptw">twitter</span>
+                                        <a href="http://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                    </li>
+
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>

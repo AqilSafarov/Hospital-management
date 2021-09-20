@@ -1,0 +1,162 @@
+﻿@model List<Labostic.Models.Setting>
+@{
+    ViewData["Title"] = "Index";
+    int firstRow = (int)((ViewBag.CurrentPage - 1) * ViewBag.DataPage);
+}
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Doctor Dashboard</a></li>
+                            <li class="breadcrumb-item active">Setting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto text-right">
+                    <a class="btn btn-white filter-btn" href="javascript:void(0);" id="filter_search">
+                        <i class="feather-filter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <form action="#" method="post" id="filter_inputs">
+            <input type="hidden" name="csrf_token_name" value="4a0efd10c152f3f6117fec6b1be8e87e" />
+            <div class="card filter-card">
+                <div class="card-body pb-0">
+                    <div class="row filter-row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Patient ID</label>
+                                <input class="form-control" type="text" name="from">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Patient Name</label>
+                                <input class="form-control" type="text" name="from">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input class="form-control" type="text" name="to">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="create-everything" style="padding-bottom: 6px;  ">
+                    <a class="button-create text-white bg-theme-1 shadow-md mr-2" asp-area="admin" asp-controller="Setting" asp-action="create" style="font-size:14px; padding:13px 24px 16px 23px; background:#323584;">Create Contact</a>
+
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Number</th>
+                                        <th>Logo Navbar</th>
+                                        <th>Logo Footer</th>
+                                        <th>Footer About</th>
+                                        <th>Phone Number One</th>
+                                        <th>Phone Number One</th>
+                                        <th>Address</th>
+                                        <th>Work Hours</th>
+                                        <th>Email Nav</th>
+                                        <th>Email Footer</th>
+                                        <th>About Title</th>
+                                        <th>About Desc</th>
+                                        <th>Image About Sign</th>
+                                        <th>Home Title</th>
+                                        <th>Home Desc</th>
+                                        <th>Img Home</th>
+                                        <th>Home LeftS Title</th>
+                                        <th>Home LeftS Desc</th>
+                                        <th>Home LeftS Img</th>
+                                        <th>Home RightS Title</th>
+                                        <th>Home RightS Desc</th>
+                                        <th>Home RightS Img</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{ int i = firstRow;}
+
+                                    @foreach (var item in Model)
+                                    {
+                                        i++;
+
+                                    <tr>
+                                        <td>
+                                            @i
+                                        </td>
+                                        <td><img width="28" height="28" src="/@item.LogoNav" class="rounded-circle m-r-5" alt=""></td>
+                                        <td><img width="28" height="28" src="/image/@item.LogoFooter" class="rounded-circle m-r-5" alt=""></td>
+                                        <td>@(@item.About!=null && @item.About.Length>30? @item.About.Substring(0,30): @item.About)</td>
+                                        <td>@item.PhoneNumOne</td>
+                                        <td>@item.PhoneNumTwo</td>
+                                        <td>@item.Address</td>
+                                        <td>@item.WorkHours</td>
+                                        <td>@item.EmailNav</td>
+                                        <td>@item.EmailFooter</td>
+                                        <td>@item.AboutTitle</td>
+                                        <td>@(@item.AboutDesc != null && @item.AboutDesc.Length>30? @item.AboutDesc.Substring(0,30): @item.AboutDesc)</td>
+                                        <td><img width="28" height="28" src="/image/@item.ImageAbout" class="rounded-circle m-r-5" alt=""></td>
+                                        <td><img width="28" height="28" src="/image/@item.ImageAboutSign" class="rounded-circle m-r-5" alt=""></td>
+                                        <td>@item.HomeTitle</td>
+                                        <td>@(@item.HomeDesc!=null && @item.HomeDesc.Length>30? @item.HomeDesc.Substring(0,30): @item.HomeDesc)</td>
+                                        <td><img width="28" height="28" src="/image/@item.ImageHome" class="rounded-circle m-r-5" alt=""></td>
+                                        <td>@item.HomeLeftSTitle</td>
+                                        <td>@(@item.HomeLeftSDesc!=null && @item.HomeLeftSDesc.Length>50? @item.HomeLeftSDesc.Substring(0,50): @item.HomeLeftSDesc)</td>
+                                        <td><img width="28" height="28" src="/image/@item.HomeLeftSIamge" class="rounded-circle m-r-5" alt=""></td>
+                                        <td>@item.HomeRighttSTitle</td>
+                                        <td>@(@item.HomeRightSDesc!=null && @item.HomeRightSDesc.Length>50? @item.HomeRightSDesc.Substring(0,50): @item.HomeRightSDesc)</td>
+
+                                        <td><img width="28" height="28" src="/image/@item.HomeRightSIamge" class="rounded-circle m-r-5" alt=""></td>
+
+                                        <td class="text-right d-flex">
+                                            <a asp-area="admin" asp-controller="Setting" asp-action="update" asp-route-settingId="@item.Id" class="btn btn-sm btn-white text-success mr-2 d-flex"><i class="far fa-edit mr-1"></i> Edit</a>
+
+                                            <a asp-area="admin" asp-controller="Setting" asp-action="delete" asp-route-settingId="@item.Id" onclick="return confirm('Are you sure?')" class="btn btn-sm btn-white text-danger mr-2 d-flex"><i class="far fa-trash-alt mr-1"></i>Delete</a>
+                                        </td>
+                                        <td class="text-right d-flex">
+                                        </td>
+
+                                    </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="Setting" asp-action="index" asp-route-page="1">Previous</a></li>
+                @for (int j = 1; j <= ViewBag.PageCount; j++)
+                {
+                    <li class="page-item"> <a class="page-link @(j==ViewBag.CurrentPage ?"pagination__link--active":"")" asp-area="admin" asp-controller="Setting" asp-action="index" asp-route-page="@j">@j</a> </li>
+                }
+                <li class="page-item"><a class="page-link" asp-area="admin" asp-controller="Setting" asp-action="index" asp-route-page="@ViewBag.PageCount">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+

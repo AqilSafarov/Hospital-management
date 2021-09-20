@@ -1,0 +1,32 @@
+﻿@model Labostic.Models.Subscribe
+@{
+    Layout = null;
+}
+
+<div class="subscribe">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="text">
+                        <div class="title">
+                            <h5>Subscribe To Our Newsletter </h5>
+                        </div>
+                        <div class="desc">
+                            <p>Stay in touch with us to get latest news and discount coupons</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <form method="get" asp-controller="home" asp-action="Subscribe">
+                    <input  asp-for="Email" placeholder="Enter Your Email Address... ">
+                    <button type="submit">Subscribe Now!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

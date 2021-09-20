@@ -1,0 +1,1186 @@
+﻿@model VmHome
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="home">
+   
+        <section id="mainSilder">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    @foreach (var item in Model.Slider.Take(1))
+                    {
+                        <div class="carousel-item active">
+                            <img src="@item.Image" class="d-block w-100" alt="...">
+                            <div class="container">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="slider-content">
+                                            <div class="txtfirst">
+                                                <div class="sliderovercon">
+                                                    <h2>
+                                                        @Html.Raw(@item.Title)
+                                                     
+                                                    </h2>
+                                                    <p>
+                                                        @Html.Raw(@item.Desc)
+
+                                                    </p>
+                                                </div>
+
+
+                                                <div class="additional">
+                                                    <div class="mainsl-more">
+                                                        <a href="">
+                                                            Learn More
+                                                            <i class="fas fa-angle-double-right"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mainsl-video">
+                                                        <a href="">
+                                                            <i class="fas fa-play"></i>
+
+                                                        </a>
+
+
+                                                        <p>View Video</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hospitalVideo">
+                                <div class="Iframe">
+                                    <iframe width="853" height="480" src="@item.VideoUrl"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    <div class="icon-video">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    @foreach (var item in Model.Slider.Skip(1).Take(1))
+                    {
+                        <div class="carousel-item" id="txtsec">
+                            <img src="@item.Image" class="d-block w-100" alt="...">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="slider-content">
+                                            <div class="txtsecond">
+                                                <h2>
+                                                   @Html.Raw(@item.Title)
+
+                                                </h2>
+                                                <p>
+                                                   @item.Desc
+
+                                                </p>
+                                                <div class="additional">
+                                                    <div class="additional-circle">
+                                                        <a href="">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="additional-circle">
+                                                        <a href="">
+                                                            <i class="fas fa-user-md"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="additional-circle">
+                                                        <a href="">
+                                                            <i class="far fa-clock"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="additional-circle">
+                                                        <a href="">
+                                                            <i class="fas fa-bong"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    <div class="left">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="prev">
+                            <span class="" aria-hidden="true"></span>
+                            <i class="fas fa-angle-left"></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                    </div>
+
+                    <div class="right">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                                data-bs-slide="next">
+                            <span class="" aria-hidden="true"></span>
+                            <i class="fas fa-angle-right"></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+    <div class="introduction">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-5 col-xs-12">
+                    <div class="introductionimg">
+                        <img src="image/single-img-three.jpg" alt="">
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-7 col-xs-12">
+                    <div class="introduction-content">
+                        <div class="introduction-header">
+                            <div class="introduction-title">
+                                <h5>
+                                    ABOUT US
+                                </h5>
+                                <h2>
+                                    @Model.Setting.HomeTitle
+
+                                </h2>
+
+                            </div>
+                            <div class="introduction-desc">
+                                <p>
+                                    @Model.Setting.HomeDesc
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="introduction-num">
+                        @foreach (var item in Model.HomeCircle)
+                        {
+                            <div class="num-box">
+                                <div class="num-icon">
+                                    <div class="num-circle" id="expectAfter">
+                                        <p>0 @item.CircleNum</p>
+
+                                    </div>
+                                </div>
+                                <div class="num-content">
+                                    <h5>
+                                        @item.CircleTitle
+
+
+                                    </h5>
+                                    <p>
+                                        @item.CircleDesc
+
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="comma-fid">
+                        <div class="fid-icon">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                        <div class="fid-content">
+                            <h4>
+                                <p class="growNum" @*data-number="143"*@ @*data-speed="100" data-step="15"*@>
+                                    143
+                                    <span>+</span>
+                                </p>
+                            </h4>
+                            <h3>
+                                Our Equipments
+                            </h3>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="comma-fid">
+                        <div class="fid-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="fid-content">
+                            <h4>
+                                <p class="growNum" @*data-number="780" data-speed="10" data-step="15"*@>
+                                    780
+                                    <span>+</span>
+                                </p>
+                            </h4>
+                            <h3>
+                                Our Equipments
+                            </h3>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="comma-fid" id="comma-fidResponse">
+                        <div class="fid-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="fid-content">
+                            <h4>
+                                <p class="growNum" @*data-number="675" data-speed="100" data-step="12"*@>
+                                   675
+                                    <span>+</span>
+                                </p>
+                            </h4>
+                            <h3>
+                                Complete Cases
+                            </h3>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="comma-fid" id="exception">
+                        <div class="fid-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="fid-content">
+                            <h4>
+                                <p class="growNum" @*data-number="457" data-speed="100" data-step="   8"*@>
+                                   457
+                                    <span>+</span>
+                                </p>
+                            </h4>
+                            <h3>
+                                Industry Expertise
+                            </h3>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="blue-part  ">
+        <div class="blue-layer">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="blue-explain">
+                        <div class="blue-icon">
+                            <span>
+                                <i class="fas fa-shoe-prints"></i>
+                            </span>
+                        </div>
+                        <div class="blue-content">
+                            <h5>The Introductory step</h5>
+                            <p>
+                                It focuses on issues involving family relationships. Like adoption, divorce, child
+                                custody etc.
+                            </p>
+                        </div>
+                        <div class="blue-arrow">
+                            <a href="">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blue-explain " id="average">
+                        <div class="blue-icon">
+                            <span>
+                                <i class="fas fa-procedures"></i>
+                            </span>
+                        </div>
+                        <div class="blue-content">
+                            <h5>
+                                A Safer Health System
+                            </h5>
+                            <p>
+                                We are expand funding of the research, training, and the education of safe practices
+                                as appropriate
+                            </p>
+                        </div>
+                        <div class="blue-arrow">
+                            <a href="">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blue-explain">
+                        <div class="blue-icon">
+                            <span>
+                                <i class="fas fa-diagnoses"></i>
+                            </span>
+                        </div>
+                        <div class="blue-content">
+                            <h5>Follow NABL regulations</h5>
+                            <p>
+                                Autonomous society providing technical competence of testing, accreditation, medical
+                                laboratory.
+                            </p>
+                        </div>
+                        <div class="blue-arrow">
+                            <a href="">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="home-service">
+        <div class="home-service-layer"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6" id="layerserviceDown">
+                    <div class="home-servicetitle">
+                        <div class="caption">
+                            <h5>
+                                OUR SERVICES
+                            </h5>
+                            <h2>
+                                Explore Our Main Services
+                            </h2>
+                        </div>
+                        <p>
+                            Our excellent team is ready to be part of your team to work into the different areas of
+                            diagnoses. Scientists helping scientists.
+
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="home-servicemain">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6" id="sevrvicehomecol">
+                                <div class="servicemain-content">
+                                    <h4>
+                                        @Model.Setting.HomeLeftSTitle
+                                    </h4>
+                                    <p>
+                                        @Model.Setting.HomeLeftSDesc
+
+                                    </p>
+                                    <ul>
+                                        @foreach (var item in Model.LabTech)
+                                        {
+                                            <li>
+                                                <i class="@item.Icon"></i>
+
+                                                <div class="li-content">
+                                                    @item.Desc
+
+                                                </div>
+                                            </li>
+
+                                        }
+                                    </ul>
+                                    <div class="home-serviceIconNum">
+                                        <div class="home-serviceIcon">
+                                            <div class="icon">
+                                                <span>
+                                                    <i class="fas fa-user-nurse"></i>
+
+                                                </span>
+
+                                            </div>
+                                            <div class="content">
+                                                <h5>
+                                                    20 Years
+                                                </h5>
+                                                <span>
+                                                    Of Lab Experience
+
+
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="home-serviceNum">
+                                            <div class="num">
+                                                <div class="num-updesc">
+                                                    <span>
+                                                        Call To Ask Any Questions
+
+
+                                                    </span>
+                                                </div>
+
+                                                <h5>
+                                                    +123-456-7890
+
+                                                </h5>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-6" id="sevrvicehomecolsix">
+                                <div class="home-servicemain-img">
+                                    <img src="@Model.Setting.HomeRightSIamge" alt="">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-6" id="sevrvicehomecolsix">
+                                <div class="home-servicemain-img ">
+                                    <img src="@Model.Setting.HomeLeftSIamge" alt="">
+
+                                </div>
+
+                            </div>
+                            <div class="col-xl-5 col-lg-6" id="sevrvicehomecol">
+                                <div class="servicemain-content">
+                                    <h4>
+                                        The Lab Trusted Experts
+
+                                    </h4>
+                                    <p>
+                                        We know how to bring the security you need. With an experience in a wide
+                                        range of fields and devices.
+
+
+                                    </p>
+                                    @foreach (var item in Model.TrustedExp)
+                                    {
+                                        <div class="progressbar">
+                                            <div class="comma">
+                                                <div class="title">
+                                                    <p>@item.Title</p>
+                                                </div>
+                                                <div class="inner">
+                                                    <div class="clr" style="width: @item.Percent%;"></div>
+                                                </div>
+                                                <div class="percent">@item.Percent%</div>
+                                            </div>
+                                        </div>
+
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="latest-case">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <div class="latestcase-headline">
+                        <div class="latestcase-title">
+                            <h5>
+                                WHAT WE DO
+                            </h5>
+                            <h2>
+                                Our Latest Case Studies
+
+                            </h2>
+                        </div>
+                        <p>
+                            Our collaboration projects between the public sector, industry and academia bring a real
+                            impact for the our health and lab firms.
+
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="tab">
+                        <ul>
+                            <li data-filter="all" class="research-active categorycare  category_item" id="all">
+                                <a href="" class="expectBorder">All</a>
+                            </li>
+                            <li data-filter="cardiology" class="categorycare category_item" id="cardiology">
+                                <a href="">Cardiology</a>
+                            </li>
+                            <li data-filter="orthopedics" class="categorycare category_item" id="orthopedics">
+                                <a href="">Orthopedics</a>
+                            </li>
+                            <li data-filter="pharmacy" class="categorycare category_item" id="pharmacy">
+                                <a href="">Pharmacy</a>
+                            </li>
+                            <li data-filter="anestheslology" class="categorycare category_item" id="anestheslology">
+                                <a href="">Anestheslology</a>
+                            </li>
+                            <li data-filter="pediatric" class="categorycare category_item" id="pediatric">
+                                <a href="">Pediatric</a>
+                            </li>
+                        </ul>
+                        <div class="research p-0">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter cardiology">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img src="image/01.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+
+
+                                            </div>
+                                            <div data-filter="first">
+                                                <div class="categoryPicture">
+                                                    <div class="Iframe">
+                                                        <img src="image/01.jpg" alt="">
+
+                                                        <div class="icon-videos">
+                                                            <i class="fas fa-times"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter pediatric">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img data-filter="second" src="image/06.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+
+
+                                            </div>
+                                            <div class="second">
+                                                <div class="categoryPicture">
+                                                    <div class="Iframe">
+                                                        <img data-filter="second" src="image/06.jpg" alt="">
+
+
+                                                        <div class="icon-videos">
+                                                            <i class="fas fa-times"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter anestheslology">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img src="image/02.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+                                            </div>
+                                            <div class="categoryPicture">
+                                                <div class="Iframe">
+                                                    <img src="image/02.jpg" alt="">
+
+                                                    <div class="icon-videos">
+                                                        <i class="fas fa-times"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter cardiology">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img src="image/03.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+                                            </div>
+                                            <div class="categoryPicture">
+                                                <div class="Iframe">
+                                                    <img src="image/03.jpg" alt="">
+
+                                                    <div class="icon-videos">
+                                                        <i class="fas fa-times"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter pharmacy">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img src="image/04.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+                                            </div>
+                                            <div class="categoryPicture">
+                                                <div class="Iframe">
+                                                    <img src="image/04.jpg" alt="">
+
+                                                    <div class="icon-videos">
+                                                        <i class="fas fa-times"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 filter orthopedics">
+                                        <div class="research-single box  ">
+                                            <div class="picture">
+                                                <a href="">
+                                                    <img src="image/05.jpg" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="up-media">
+
+                                                <a href="researchdetail.html">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+                                            </div>
+                                            <div class="categoryPicture">
+                                                <div class="Iframe">
+                                                    <img src="image/05.jpg" alt="">
+
+                                                    <div class="icon-videos">
+                                                        <i class="fas fa-times"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="research-content">
+                                                <div class="title">
+                                                    <a href="researchdetail.html">
+                                                        <h5>Fitness Guidance to Patient</h5>
+                                                    </a>
+                                                    <p>Cardiology, Anestheslology</p>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="testimonial">
+        <div class="testimonial-layer"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-10 m-auto">
+                    <div class="testimonial-headline">
+                        <div class="title-header">
+                            <h5>TESTIMONALS</h5>
+                            <h2>
+                                “Best Clinic Services Provide”
+                            </h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="one-time owl-theme d-flex align-items-center justify-content-center">
+                    @foreach (var item in Model.Testimonial)
+                    {
+                        <div class="col-lg-12 item">
+                            <div class="single-testimonial">
+                                <div class="testimonial-picture">
+                                    <img src="image/@item.Image" alt="">
+                                </div>
+
+
+                                <div class="content">
+                                    <h5>“@item.ImageDownTitle”</h5>
+
+                                    <p>
+                                       @item.Desc
+                                    </p>
+
+
+                                </div>
+                                <h5>
+                                    @item.Fullname
+                                </h5>
+                                <label for="">
+                                    @item.PositionName
+                                </label>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <div class="distribution">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="layer-content ">
+                        <div class="distribution-layer"></div>
+                        <div class="distribution-img">
+                            <ul class="distribution-ul multiple-items ">
+                                @foreach (var item in Model.Partner)
+                                {
+                                    <li class="cl3">
+                                        <span class="tooltipcl3">@item.Name</span>
+                                        <a href=""><img src="/image/@item.Image" alt=""></a>
+                                    </li>
+
+                                }
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="trustedexpert">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 ml-auto">
+                    <div class="trustedexpert-bg">
+                        <div class="trustedexpertbg-layer"></div>
+                        <div class="trustedexpert-content">
+                            <div class="trustedexpert-title">
+                                <div class="trustedexpert-header">
+                                    <h5>A GREAT Technology</h5>
+                                    <h2>
+                                        We Are The Trusted Experts Lab Technician
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="accordion">
+                                <div class="toggle ">
+                                    <div class="custom-title custom-active">
+                                        <h6>
+                                            <i class="fas fa-plus" id="plus"></i>
+                                            <i class="fas fa-minus" id="minus"></i>
+                                            What are laboratory tests?
+                                        </h6>
+
+
+                                    </div>
+                                    <div class="custom-description show">
+                                        <img src="image/blog-three-100x95.jpg" alt="">
+                                        <p>
+                                            fdewfewfwfonic typesetting, remaining essentially unchanged.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="toggle">
+                                    <div class="custom-title">
+                                        <h6>
+                                            <i class="fas fa-plus" id="plus"></i>
+                                            <i class="fas fa-minus" id="minus"></i>
+                                            Who performs the testing on specimens?
+                                        </h6>
+                                    </div>
+                                    <div class="custom-description">
+                                        <img src="image/blog-three-100x95.jpg" alt="">
+                                        <p>
+                                            but also the leap into electronic typesetting, remaining essentially
+                                            unchanged.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="toggle">
+                                    <div class="custom-title">
+                                        <h6>
+                                            <i class="fas fa-plus" id="plus"></i>
+                                            <i class="fas fa-minus" id="minus"></i>
+                                            Who perratory specimens?
+                                        </h6>
+                                    </div>
+                                    <div class="custom-description">
+                                        <img src="image/blog-three-100x95.jpg" alt="">
+                                        <p>
+                                            It hasuries, but also the leap into electronic typesetting, remaining
+                                            essentially unchanged.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="latestpost  ">
+        <div class="container">
+            <div class="row  ">
+                <div class="col-lg-6 col-md-8 col-sm-10">
+                    <div class="latestpost-headline">
+                        <div class="latestpost-title">
+                            <h5>
+                                OUR SERVICES
+                            </h5>
+                            <h2>
+                                Explore Our Main Services
+                            </h2>
+                        </div>
+                        <p>
+                            Read & get educated & knowledge over versatile laboratory technology.We how else you can
+                            help patients without being a doctor.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="row multiple-items " id="post-box">
+                @foreach (var item in Model.Services.Take(1))
+                {
+                    <div class="col-lg-4 ">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-img">
+                                <img src="@item.Image">
+                            </div>
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a href="serviceOne.html">
+                                        @item.Title
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+
+                                        @(item.Desc!=null && item.Desc.Length>50? item.Desc.Substring(0,50): item.Desc)
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a asp-controller="Services" asp-action="Index">Read More!</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                }
+                @foreach (var item in Model.Services.Skip(1).Take(1))
+                {
+                    <div class="col-lg-4">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a asp-controller="Services" asp-action="Two">
+                                        @item.Title
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+                                        @(item.Desc!=null && item.Desc.Length>60? item.Desc.Substring(0,60): item.Desc)
+
+
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a href="serviceTwo.html">Read More !</a>
+                                </div>
+                            </div>
+                            <div class="img-upovreflow" style="overflow: hidden;">
+                                <div class="latestpost-img">
+                                    <img src="@item.Image" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+                @foreach (var item in Model.Services.Skip(2).Take(1))
+                {
+                    <div class="col-lg-4">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-boximg">
+                                <div class="latestpost-img">
+                                    <img src="@item.Image" alt="">
+                                </div>
+                            </div>
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a asp-controller="Services" asp-action="Three">
+                                        @item.Title
+
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+                                        @(item.Desc!=null && item.Desc.Length>50? item.Desc.Substring(0,50): item.Desc)
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a href="servicetTree.html">Read More!</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
+                @foreach (var item in Model.Services.Skip(3).Take(1))
+                {
+                    <div class="col-lg-4 ">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-img">
+                                <img src="@item.Image" alt="">
+                            </div>
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a href="serviceFour.html">
+                                        @item.Title
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+                                        @(item.Desc!=null && item.Desc.Length>50? item.Desc.Substring(0,50): item.Desc)
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a asp-controller="Services" asp-action="Four">Read More!</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                }
+                @foreach (var item in Model.Services.Skip(4).Take(1))
+                {
+                    <div class="col-lg-4">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a asp-controller="Services" asp-action="Five">
+                                        @item.Title
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+                                        @(item.Desc!=null && item.Desc.Length>50? item.Desc.Substring(0,50): item.Desc)
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a href="serviceFive.html">Read More !</a>
+                                </div>
+                            </div>
+                            <div class="img-upovreflow" style="overflow: hidden;">
+                                <div class="latestpost-img">
+                                    <img src="image/services-05.jpg" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+                @foreach (var item in Model.Services.Skip(2).Take(1))
+                {
+                    <div class="col-lg-4">
+                        <div class="latestpost-boxcomma">
+                            <div class="latestpost-boximg">
+                                <div class="latestpost-img">
+                                    <img src="@item.Image" alt="">
+                                </div>
+                            </div>
+                            <div class="latestpost-boxcontent">
+
+                                <div class="boxcontent-title">
+                                    <a asp-controller="Services" asp-action="Three">
+                                        @item.Title
+
+                                    </a>
+
+                                </div>
+                                <div class="boxcontent-desc">
+                                    <p>
+                                        @(item.Desc!=null && item.Desc.Length>50? item.Desc.Substring(0,50): item.Desc)
+                                    </p>
+
+                                </div>
+                                <div class="readMore">
+                                    <a href="servicetTree.html">Read More!</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="latestpost-latest">
+                        <span>
+                            Don’t hesitate, contact us for better help and blog Explore all latest News..
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-d0adf468-a23e-4aa3-9b10-b0902d7b4292"></div>
+</div>

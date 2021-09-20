@@ -1,0 +1,56 @@
+﻿@model List<Labostic.Models.Research>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2>Research</h2>
+                </div>
+                <div class="breadcrumb">
+                    <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                    <span class="details">Research</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="research">
+    <div class="container">
+        <div class="row">
+          
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="research-single">
+                        <div class="picture">
+                            <a href="">
+                                <img src="/image/@item.Image" alt="">
+                            </a>
+                        </div>
+                        <div class="up-media">
+
+                            <a href="researchdetail.html">
+                                <i class="fas fa-link"></i>
+                            </a>
+
+
+                        </div>
+                        <div class="research-content">
+                            <div class="title">
+                                <a asp-controller="research" asp-action="details"  asp-route-researchId="@item.Id"><h5>@item.Title</h5></a>
+                                <p>@item.ResearchCategory.Name</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>

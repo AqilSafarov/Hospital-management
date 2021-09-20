@@ -1,0 +1,110 @@
+﻿@model VmFaq
+ 
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2>FAQ</h2>
+                </div>
+                <div class="breadcrumb">
+                    <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                    <span class="details">Faq</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="headline">
+                    <div class="head">
+                        <h2>
+                            Frequently Asked Questions
+                        </h2>
+                    </div>
+                    <div class="head-desc">
+                        <p>
+                            Below you’ll find answers to some of the most frequently asked questions at Tectxon. We
+                            are constantly adding most asked question to this page so if you have a question and
+                            don’t see your answer, don’t hesitate to email us at <a href="mailto:info@example.com">info@example.com</a>
+
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    @foreach (var item in Model.Faq)
+                    {
+                        <div class="toggle">
+                            <div class="custom-title">
+                                <h6>
+                                    <i class="fas fa-plus" id="plus"></i>
+                                    <i class="fas fa-minus" id="minus"></i>
+                                   @item.Question
+                                </h6>
+                            </div>
+                            <div class="custom-description">
+                                <p>
+                                  @item.Answer
+                                </p>
+                            </div>
+                        </div>
+
+                    }
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="submit">
+                    <!-- <div class="submit-bg"></div> -->
+                    <div class="submit-content">
+                        <div class="content-title">
+                            <h2>Submit Question</h2>
+                        </div>
+                        <p>
+                            Fill all information details to consult with our best Attorneys
+                        </p>
+
+                    </div>
+                    <form method="get" asp-controller="faq" asp-action="question">
+                        <div asp-validation-summary="All"></div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- <label for="">
+                <span>
+                    <input type="text">
+                </span>
+            </label> -->
+                                <label for="">
+                                    <input asp-for="Question.Fullname" type="text" placeholder="Your Name">
+                                </label>
+                                <label for="">
+                                    <input asp-for="Question.Email" type="email" placeholder="Email">
+                                </label>
+                                <label for="">
+                                    <input asp-for="Question.PhoneNumber" type="tel" placeholder="Phone Number">
+                                </label>
+                                <label for="">
+                                    <textarea asp-for="Question.Message" cols="30" rows="10" placeholder="Message"></textarea>
+                                </label>
+                                <label for="" class="but">
+                                    <button type="submit">
+                                        Submit
+
+                                    </button>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

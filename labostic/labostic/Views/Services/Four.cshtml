@@ -1,0 +1,439 @@
+﻿@model List<Labostic.Models.Services>
+@{
+    ViewData["Title"] = "Four";
+}
+
+@foreach (var item in Model.Skip(3).Take(1))
+{
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title">
+                        <h2>@item.Name</h2>
+                    </div>
+                    <div class="breadcrumb">
+                        <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                        <span class="details">@item.Name </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-menu">
+                        <ul>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="index">Advanced Robotics</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="two">Anatomic Pathology</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="three">Chemical Research</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="four">Chemistry & Hematology</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="five">Environmental Testing</a>
+                            </li>
+                            <li class="passiv">
+                                <a asp-controller="services" asp-action="six">Lab Test Directory</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="download">
+                        <ul class="download-ul">
+                            <li>
+                                <i class="far fa-file-pdf"></i>
+                                <div class="download-button">
+                                    <h4>Our Brouchers</h4>
+                                    <a href="">Download</a>
+                                </div>
+
+                            </li>
+                            <li>
+                                <i class="far fa-file-pdf"></i>
+                                <div class="download-button">
+                                    <h4>Laboratory Details</h4>
+                                    <a href="">Download</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="how-help">
+                        <div class="bg">
+                            <div class="wrapper">
+                                <div class="inner">
+
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="layer">
+                                    <div class="bglayer"></div>
+                                    <div class="darkgrey">
+                                        <div class="colbg-layer">
+                                            <div class="layer-inner"></div>
+                                        </div>
+                                        <div class="layer-content">
+                                            <div class="icon">
+                                                <i class="fas fa-flask"></i>
+                                            </div>
+                                            <h4>How Can We Help?</h4>
+                                            <p>
+                                                If you need any helps,please feel free to contact us.
+                                            </p>
+                                            <ul>
+                                                <li>
+                                                    <i class="fas fa-phone-alt"></i>
+                                                    +1800-123-456-78
+                                                </li>
+
+                                                <li>
+                                                    <i class="far fa-envelope"></i>
+                                                    <a href="mailto:info@info@laboratory.com">info@laboratory.com</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tag">
+                        <div class="tag-title">
+                            <h3>Popular Tags</h3>
+                        </div>
+                        <div class="tag-squar">
+                            <a href="" class="cloud">Laboratory specimen</a>
+                            <a href="" class="cloud">Wet lab</a>
+                            <a href="" class="cloud">Reagent bottle</a>
+                            <a href="" class="cloud">Gemological</a>
+                            <a href="" class="cloud">Laboratory safety</a>
+                            <a href="" class="cloud">equipment‎</a>
+                            <a href="" class="cloud">Biochemistry research</a>
+                            <a href="" class="cloud">Commercial</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="servicefour-img">
+                        <img src="/@item.Image" alt="">
+                    </div>
+                    <div class="servicefour-desc">
+                        <h4>
+                            Finibus Bonorum et Malorum
+
+                        </h4>
+                        <div class="servicefour-content">
+                            <p>
+                               @item.Desc
+
+                            </p>
+
+                        </div>
+                        <h4>
+                           @item.TitleTwo
+
+                        </h4>
+                        <div class="arrow">
+                            <div class="col-sm-4">
+                                <ul class="arrow-desc">
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="arrow-desc">
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul class="arrow-desc">
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-arrow-circle-right"></i>
+
+                                        <p>Knee replacement</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="servicetwo-line">
+                            <span class="holder">
+                                <span class="line"></span>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="access">
+                                    <h4>
+
+                                        @item.TitleThree
+
+                                        <img src="/@item.ImageTwo" alt="">
+
+                                    </h4>
+                                    <p>
+                                        @item.DescTwo
+                                    </p>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="servicetwo-line">
+                            <span class="holder">
+                                <span class="line"></span>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h4>
+                                @item.TitleFour
+
+                                </h4>
+                                <p>
+                                    @item.DescThree
+                                </p>
+
+
+                            </div>
+                            <div class="col-md-5">
+                                <h4>
+                                    Other Like
+                                </h4>
+                                <ul class="otherlike">
+                                    <li>
+                                        <i class="@item.Icon"></i>
+                                        <p>Accident</p>
+                                    </li>
+                                    <li>
+                                        <i class="@item.IconTwo"></i>
+                                        <p>Premises Liability</p>
+                                    </li>
+                                    <li>
+                                        <i class="@item.IconThree"></i>
+                                        <p>Wrongful Death</p>
+                                    </li>
+                                    <li>
+                                        <i class="@item.IconFour"></i>
+                                        <p>Defective Products</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="custom-tab-menu-container">
+                                    <div class="custom-tab-menu-nav">
+                                        <ul>
+                                            <li>
+                                                <p class="custom-tab-menu-nav-item active" data-target="item-1">Researches</p>
+                                            </li>
+                                            <li>
+                                                <p class="custom-tab-menu-nav-item" data-target="item-2">Technician</p>
+                                            </li>
+                                            <li>
+                                                <p class="custom-tab-menu-nav-item" data-target="item-3">Experience</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="custom-tab-menu-content">
+                                        <div class="custom-tab-menu-content-item show" data-target="item-1">
+                                            <div class="progressbar">
+                                                <div class="comma">
+                                                    <div class="title">
+                                                        <p>Advanced Microscopy </p>
+                                                    </div>
+                                                    <div class="inner" per="96">
+                                                        <div class="clr" id="ninsix"></div>
+                                                    </div>
+                                                    <div class="percent ">96</div>
+                                                </div>
+                                            </div>
+                                            <div class="progressbar">
+                                                <div class="comma">
+                                                    <div class="title">
+                                                        <p>Sample Preparation</p>
+                                                    </div>
+                                                    <div class="inner" per="90">
+                                                        <div class="clr" id="eight"></div>
+                                                    </div>
+                                                    <div class="percent ">90</div>
+                                                </div>
+                                            </div>
+                                            <div class="progressbar">
+                                                <div class="comma">
+                                                    <div class="title">
+                                                        <p>Sample Preparation</p>
+                                                    </div>
+                                                    <div class="inner" per="70">
+                                                        <div class="clr" id="sevn"></div>
+                                                    </div>
+                                                    <div class="percent ">70</div>
+                                                </div>
+                                            </div>
+                                            <div class="progressbar">
+                                                <div class="comma">
+                                                    <div class="title">
+                                                        <p>Sample Preparation</p>
+                                                    </div>
+                                                    <div class="inner" per="90">
+                                                        <div class="clr" id="ninteen"></div>
+                                                    </div>
+                                                    <div class="percent">90</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom-tab-menu-content-item" data-target="item-2">
+                                            <div class="content-tab">
+                                                <div class="icon">
+                                                    <div class="up">
+                                                        <p>01</p>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <h5>
+                                                        All the services you expect from a clinical trial lab All the services you expect from a clinical trial lab Pellentesque vitae pulvinar urna, in dignissim nulla.
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="content-tab">
+                                                <div class="icon">
+                                                    <div class="up">
+                                                        <p>02</p>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <h5>
+                                                        All the services you expect from a clinical trial lab All the services you expect from a clinical trial lab Pellentesque vitae pulvinar urna, in dignissim nulla.
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="content-tab">
+                                                <div class="icon">
+                                                    <div class="up">
+                                                        <p>03</p>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <h5>
+                                                        All the services you expect from a clinical trial lab All the services you expect from a clinical trial lab Pellentesque vitae pulvinar urna, in dignissim nulla.
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                            <div class="content-tab">
+                                                <div class="icon">
+                                                    <div class="up">
+                                                        <p>04</p>
+                                                    </div>
+                                                </div>
+                                                <div class="content">
+                                                    <h5>
+                                                        All the services you expect from a clinical trial lab All the services you expect from a clinical trial lab Pellentesque vitae pulvinar urna, in dignissim nulla.
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom-tab-menu-content-item" data-target="item-3">
+                                            <div class="experience">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+
+
+                                                </p>
+                                                <p>
+                                                    Mauris iaculis, tortor sed pharetra varius, purus augue feugiat purus, vitae porta nulla turpis pellentesque dolor. Interdum et malesuada fames ac.Vivamus posuere posuere ex, ac tincidunt turpis porta id. Aenean sed mauris lacus easy to distinguish.
+
+
+                                                </p>
+                                                <ul>
+                                                    <li>
+                                                        <i class="fas fa-square"></i>
+                                                        <p>
+                                                            Lorem Ipsum has been the industry's standard dummy text
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-square"></i>
+                                                        <p>
+                                                            Our services are more affordable than you think
+
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-square"></i>
+                                                        <p>
+                                                            the great explorer of the truth, the master-builder of human happiness.
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+

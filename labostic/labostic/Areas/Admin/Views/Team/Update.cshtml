@@ -1,0 +1,183 @@
+﻿@model Labostic.Models.Doctor
+@{
+    ViewData["Title"] = "Update";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Doctor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Basic Inputs</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-area="admin" asp-controller="Team" asp-action="update" enctype="multipart/form-data">
+                            <div asp-validation-summary="All" style="color:red; margin-bottom:30px;"></div>
+                            <input asp-for="Id" hidden />
+                            <input asp-for="Image" hidden />
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Fullname</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Fullname" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div id="img-update" style="position:absolute; left:493px; ">
+                                    <img src="/image/@Model.Image" alt="" style="width:15%; height:43%; border-radius:50px; ">
+
+                                </div>
+                                <label class="col-form-label col-md-2" asp-for="ImageFile">Img</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFile" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Position</label>
+                                <div class="col-md-10">
+                                    <select asp-for="PositionId" asp-items="@(new SelectList(ViewBag.Position, "Id", "Name"))" class="form-control">
+                                        <option selected="" disabled>Select Category</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Specialty</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Specialty" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Experience</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Experience" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">MedicalEdu</label>
+                                <div class="col-md-10">
+                                    <input asp-for="MedicalEdu" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Residency</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Residency" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Certification</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Certification" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Pratic Area</label>
+                                <div class="col-md-10">
+                                    <input asp-for="PraticArea" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Textarea</label>
+                                <div class="col-md-10">
+                                    <textarea id="editor" rows="5" cols="5" class="form-control" asp-for="BiographyDesc"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group writer " style="border:1px solid #e1e1e1; padding:20px; border-radius:7px; ">
+
+                                <span id="addWriter" style="font-size:23px; color:#323584; cursor:pointer;">+</span>
+                                @{ int i = 0; }
+                                @foreach (var item in Model.SocialToDoctor)
+                                {
+                                    <div class="rs" style="box-sizing:content-box !important;  margin-bottom:20px !important; ">
+                                        <label asp-for="SocialToDoctor[i].SocialId" class="col-form-label col-md-2">Social</label>
+                                        <div class="col-md-10">
+                                            <select asp-for="SocialToDoctor[i].SocialId" asp-items="@(new SelectList(ViewBag.Social, "Id", "Name"))" class="form-control">
+                                                <option selected="" disabled>Select Social</option>
+
+                                            </select>
+                                        </div>
+
+                                        <label asp-for="SocialToDoctor[i].Link" style="display:flex !important; ">Link</label>
+                                        <input asp-for="SocialToDoctor[i].Link" style="margin-top:0px!important; border-radius:4px; padding:11px; height:44px; width:35%;" class="input w-full border mt-2" placeholder="Input text">
+
+
+                                        <span class="deleteWrite" style="font-size:21px; color:red; cursor:pointer; position:relative;  left: 446px; bottom:75px;">x</span>
+
+                                    </div>
+                                    i++;
+                                }
+
+
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Achievement Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="AchievementDesc" class="form-control">
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group skill " style="border:1px solid #e1e1e1; padding:20px; border-radius:7px; ">
+
+                                <span id="addSkill" style="font-size:23px; color:#323584; cursor:pointer;">+</span>
+                                @{ int j = 0; }
+
+                                @foreach (var item in Model.SkillToDoctor)
+                                {
+                                    <div class="sr" style="box-sizing:content-box !important;    margin-bottom:20px !important; ">
+                                        <label asp-for="SkillToDoctor[j].SkillId" class="col-form-label col-md-2">Skill</label>
+                                        <div class="col-md-10">
+                                            <select asp-for="SkillToDoctor[j].SkillId" asp-items="@(new SelectList(ViewBag.Skill, "Id", "Name"))" class="form-control">
+                                                <option selected="" disabled>Select Skill</option>
+
+                                            </select>
+
+
+                                        </div>
+                                        <label asp-for="SkillToDoctor[j].Percent">Percent</label>
+                                        <input asp-for="SkillToDoctor[j].Percent" style="width:35%;" placeholder="Input text" class="form-control">
+
+                                        <span class="deleteWrite" style="font-size:21px; color:red; cursor:pointer; position:relative;  left: 760px; bottom:122px;">x</span>
+
+                                    </div>
+                                    j++;
+
+                                }
+
+
+                            </div>
+
+                            <div class="text-right mt-5">
+                                <a asp-area="admin" asp-controller="Team" asp-action="index" style="border-radius:6px; padding:12px 19px 15px 14px;" class="button w-24 border text-gray-700 mr-1">Cancel</a>
+                                <button type="submit" style="background:#323584; border:none; padding: 12px 35px 14px 30px; border-radius: 10px ;" class="button w-24 bg-theme-1 text-white">Update</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,353 @@
+﻿@model VmAbout
+@{
+    ViewData["Title"] = "Index";
+    int i = 0;
+}
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2>About</h2>
+                </div>
+                <div class="breadcrumb">
+                    <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                    <span class="details">About</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about" id="about-page">
+    <div class="sign">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xs-12">
+                    <div class="comma-about">
+                        <div class="sign-bg">
+                            <div class="sign-inner"></div>
+                        </div>
+                        <div class="sign-content">
+                            <div class="pb">
+                                <div class="sign-titledesc">
+                                    <div class="sign-title">
+                                        <h5>
+                                            ABOUT US
+                                        </h5>
+                                        <h2>
+                                            @Model.Setting.AboutTitle
+
+                                        </h2>
+                                    </div>
+                                    <div class="sign-desc">
+                                        <p>
+                                            @Model.Setting.AboutDesc
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <ul class="sign-ul">
+                                            @foreach (var item in Model.AboutSign.Take(2))
+                                            {
+                                                <li>
+                                                    <i class="@item.Icon"></i>
+                                                    <p>
+                                                        @item.Desc
+                                                    </p>
+                                                </li>
+                                            }
+
+                                         
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ul class="sign-ul">
+                                            @foreach (var item in Model.AboutSign.Take(2))
+                                            {
+                                                <li>
+                                                    <i class="@item.Icon"></i>
+                                                    <p>
+                                                        @item.Desc
+                                                    </p>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="sign-numquestion">
+                                    <div class="sign-question">
+                                        <h6>Call to ask <u> any question.</u></h6>
+
+                                    </div>
+                                    <div class="sign-num">
+                                        <h5>
+                                           @Model.Setting.PhoneNumOne
+                                        </h5>
+                                        <span>or</span>
+                                        <h5>
+                                            @Model.Setting.PhoneNumTwo
+
+
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <span class="holder">
+                                        <div class="spantow">
+
+                                        </div>
+
+                                    </span>
+                                </div>
+                                <div class="signature">
+                                    <div class="signature-icon">
+                                        <img src="@Model.Setting.ImageAboutSign" alt="">
+                                    </div>
+                                    <div class="signature-name">
+                                        <h5>
+                                            Jhon Martin (M.L.B)
+                                        </h5>
+                                        <p>
+                                            Chairnan and founder
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-10">
+                    <div class="sign-img">
+                        <img src="@Model.Setting.ImageAbout" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="whychoose">
+        <div class="why-bg">
+
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text">
+                        <h6>
+                            OUR SPECIALTIES
+                        </h6>
+                        <h2>
+                            Why Choose Us
+
+                        </h2>
+                        <p>
+                            Our excellent team is ready to be part of your team to work into the different areas of
+                            diagnoses. Scientists helping scientists.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.WhyChoose)
+                {
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="why-downiconExpect">
+                            <div class="icon">
+                                <i class="@item.Icon"></i>
+                            </div>
+                            <div class="content">
+                                <div class="why-title">
+                                    <h5>
+                                        @item.IconSubTitle
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="fid-end">
+                        <p>Laboratories Used For Scientific Research <u>Take Many Forms.</u> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wyhchoosedown">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bgchoosedown">
+                        <div class="bgchoosedown-layer"></div>
+                        <div class="layer-content">
+                            <div class="row">
+                                @foreach (var item in Model.AboutStatistic)
+                                {
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="whychoosedown-part ">
+                                            <div class="part-icon">
+                                                <i class="@item.Icon"></i>
+                                            </div>
+                                            <div class="whypart-content">
+                                                <h4>
+                                                    <p class="growNum" @*data-number="@item.Number" data-speed="100" data-step="15"*@>@item.Number <span>+</span></p>
+                                                </h4>
+                                                <h3>
+                                                   @item.Subtitle
+                                                </h3>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work-process">
+        <div class="bg-layer"></div>
+        <div class="container">
+            <div class="row" id="fix">
+                <div class="col-lg-6 col-md-8 col-sm-9">
+                    <div class="header">
+                        <div class="header-title">
+                            <h5>
+                                OUR SERVICES
+                            </h5>
+                            <h2>
+                                Our Working Process
+                            </h2>
+                        </div>
+                        <div class="title-desc">
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                Ipsum has been the industry's standard dummy text ev
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model.WorkProcess)
+                {
+                    <div class="col-md-4">
+                        <div class="about-circle">
+                            <div class="circle-icon">
+                                <div class="fill">
+                                    <i class="@item.Icon"></i>
+                                    <span>0 @item.Numb</span>
+                                </div>
+                            </div>
+                            <div class="circle-content">
+                                <div class="circle-title">
+                                    <h5>@item.Title</h5>
+                                </div>
+                                <div class="circle-desc">
+                                    <p>
+                                       @item.Desc
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div class="team " id="about-team">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-10">
+                <div class="about-team">
+                    <div class="aboutteam-header">
+                        <h5>
+                            OUR SPECIALTIES
+
+                        </h5>
+                        <h2>
+                            Led by Passionate Experts
+                        </h2>
+                    </div>
+                    <div class="aboutteam-headerdown">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ev
+
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row owl-carousel owl-theme">
+
+            @foreach (var item in Model.Doctor)
+            {
+
+                <div class=" item">
+
+                    <div class="imagebox ">
+                        <div class="picture-over">
+                            <div class="icon-plus">
+                                <a href="" id="plus-team">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                                <ul class="social">
+                                    @foreach (var item2 in item.SocialToDoctor)
+                                    {
+                                        <li class="fb">
+                                            <a href="@item2.Link">
+                                                <i class="@item2.Social.Icon"></i>
+                                            </a>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                            <div class="picture ">
+                                <img src="image/@item.Image" alt="">
+                            </div>
+                        </div>
+                        <div class="image-title">
+                            <h5><a href="">@item.Fullname</a></h5>
+                            <h6>CEO At Lab</h6>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,268 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Labostic.Services
+@inject AppDbContext _context
+@inject UserManager<IdentityUser> userManager
+@inject SignInManager<IdentityUser> signInManager
+@inject RoleManager<IdentityRole> roleManager
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from emr.dreamguystech.com/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Aug 2021 09:15:06 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>EMR - Dashboard</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/image/favicon.png">
+
+    <link rel="stylesheet" href="~/areas/admin/assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/areas/admin/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/areas/admin/assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="~/areas/admin/assets/plugins/simple-calendar/simple-calendar.css">
+
+    <link rel="stylesheet" href="~/areas/admin/assets/css/feather.css">
+
+    <link rel="stylesheet" href="~/areas/admin/assets/css/style.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left" style="background:#334d97 !important;">
+                <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="logo">
+                    <img src="~/image/logo-img.png" alt="Logo">
+                </a>
+                <a href="~/areas/admin/index.html" class="logo logo-small">
+                    <img src="~/areas/admin/assets/img/logo-small.png" alt="Logo" width="30" height="30">
+                </a>
+            </div>
+
+            <a href="~/areas/admin/javascript:void(0);" id="toggle_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+            <div class="top-nav-search">
+                <form>
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button class="btn" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <a class="mobile_btn" id="mobile_btn">
+                <i class="fas fa-bars"></i>
+            </a>
+
+
+            <ul class="nav user-menu" style="background:#323584; border-radius:50%;">
+
+                <li class="nav-item dropdown has-arrow flag-nav mr-2" style="display:none !important;">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="~/areas/admin/#" role="button">
+                        <img src="~/areas/admin/assets/img/flags/us-1.png" alt="" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="~/areas/admin/javascript:void(0);" class="dropdown-item">
+                            <img src="~/areas/admin/assets/img/flags/us.png" alt="" height="16"> English
+                        </a>
+                        <a href="~/areas/admin/javascript:void(0);" class="dropdown-item">
+                            <img src="~/areas/admin/assets/img/flags/fr.png" alt="" height="16"> French
+                        </a>
+                        <a href="~/areas/admin/javascript:void(0);" class="dropdown-item">
+                            <img src="~/areas/admin/assets/img/flags/es.png" alt="" height="16"> Spanish
+                        </a>
+                        <a href="~/areas/admin/javascript:void(0);" class="dropdown-item">
+                            <img src="~/areas/admin/assets/img/flags/de.png" alt="" height="16"> German
+                        </a>
+                    </div>
+                </li>
+
+
+
+
+                <li class="nav-item dropdown has-arrow main-drop ml-md-3">
+                    <a href="~/areas/admin/#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+
+                        <span class="user-img" style="margin-right:-5px;">
+                            <img src="~/image/default.jpg" alt="">
+                            <span class="status online"></span>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu">
+                        @if (signInManager.IsSignedIn(User))
+                        {
+            <p style="text-align:center; padding:10px 7px 2px 3px;">@roleManager.Roles.FirstOrDefault(r => r.Id == _context.UserRoles.FirstOrDefault(r => r.UserId == userManager.GetUserId(User)).RoleId).Name</p>
+
+                            <p style="text-align:center; padding:3px 8px">
+                                @userManager.GetUserName(User)
+                            </p>}
+                        <a class="dropdown-item" asp-area="Admin" asp-controller="Account" asp-action="Logout"><i class="feather-power"></i> Logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="menu-title">
+                            <span>Main</span>
+                        </li>
+                        <li class="@(ViewBag.Active=="Home" ? "active": "")">
+                            <a asp-controller="Home" asp-action="Index"><i class="feather-home"></i><span class="shape1"></span><span class="shape2"></span><span>Dashboard</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Subscribe" ? "active": "")">
+                            <a asp-controller="Subscribe" asp-action="Index"><i class="far fa-bell"></i> <span>Subscribe</span> </a>
+
+                        </li>
+                        <li class="@(ViewBag.Active=="Message" ? "active": "")">
+                            <a asp-controller="Message" asp-action="Index"><i class="feather-user"></i> <span>Contact</span> </a>
+
+                        </li>
+
+                        <li class="@(ViewBag.Active=="Faq" ? "active": "")">
+                            <a asp-controller="Faq" asp-action="Index"><i class="fas fa-question"></i> <span>Faq</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Question" ? "active": "")">
+                            <a asp-controller="Question" asp-action="Index"><i class="fas fa-question-circle"></i><span>Faq-Question</span></a>
+                        </li>
+
+                        <li class="@(ViewBag.Active=="Research" ? "active": "")">
+                            <a asp-controller="Research" asp-action="Index"> <i class="fab fa-researchgate"></i><span>Research</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="ResearchCategory" ? "active": "")">
+                            <a asp-controller="ResearchCategory" asp-action="Index"><i class="feather-list"></i> <span>Research Category</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="ResearchSquar" ? "active": "")">
+                            <a asp-controller="ResearchSquar" asp-action="Index"><i class="far fa-square"></i> <span>Research Squar</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Writer" ? "active": "")">
+                            <a asp-controller="Writer" asp-action="Index"> <i class="far fa-edit"></i><span>Writer</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Team" ? "active": "")">
+                            <a asp-controller="Team" asp-action="Index"> <i class="fas fa-user-plus"></i><span>Doctor</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Position" ? "active": "")">
+                            <a asp-controller="Position" asp-action="Index"> <i class="fas fa-crown"></i><span>Position</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Experience" ? "active": "")">
+                            <a asp-controller="Experience" asp-action="Index"><i class="fas fa-puzzle-piece"></i><span>Experience</span></a>
+                        </li>
+
+                        <li class="@(ViewBag.Active=="WorkProcess" ? "active": "")">
+                            <a asp-controller="WorkProcess" asp-action="Index"> <i class="fas fa-briefcase"></i><span>WorkProcess</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Partner" ? "active": "")">
+                            <a asp-controller="Partner" asp-action="Index"><i class="far fa-handshake"></i><span>Partner</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="HomeCircle" ? "active": "")">
+                            <a asp-controller="HomeCircle" asp-action="Index"><i class="far fa-circle"></i><span>Home Circle</span></a>
+                        </li>
+
+                        <li class="@(ViewBag.Active=="AboutSign" ? "active": "")">
+                            <a asp-controller="AboutSign" asp-action="Index"><i class="fas fa-arrow-circle-right"></i><span>AboutSign</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="AboutStatistic" ? "active": "")">
+                            <a asp-controller="AboutStatistic" asp-action="Index"><i class="fas fa-sort-numeric-down-alt"></i><span>About Statistic</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="LabTech" ? "active": "")">
+                            <a asp-controller="LabTech" asp-action="Index"><i class="fas fa-flask"></i><span>Lab Tech</span></a>
+                        </li>
+
+                        <li class="@(ViewBag.Active=="TrustedExp" ? "active": "")">
+                            <a asp-controller="TrustedExp" asp-action="Index"><i class="fab fa-buromobelexperte"></i><span>About Statistic</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="WhyChoose" ? "active": "")">
+                            <a asp-controller="WhyChoose" asp-action="Index"><i class="fab fa-whmcs"></i><span>Why Choose</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Testimonial" ? "active": "")">
+                            <a asp-controller="Testimonial" asp-action="Index"><i class="fas fa-brain"></i><span>Testimonial</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Setting" ? "active": "")">
+                            <a asp-controller="Setting" asp-action="Index"><i class="fab fa-sourcetree"></i><span>Setting</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Appointment" ? "active": "")">
+                            <a asp-controller="Appointment" asp-action="Index"><i class="far fa-calendar-check"></i><span>Appointment</span></a>
+                        </li>
+
+                        <li class="@(ViewBag.Active=="Services" ? "active": "")">
+                            <a asp-controller="Services" asp-action="Index"><i class="fas fa-concierge-bell"></i><span>Services</span></a>
+                        </li>
+
+
+
+                        <li class="@(ViewBag.Active=="Skill" ? "active": "")">
+                            <a asp-controller="Skill" asp-action="Index"> <i class="fas fa-percentage"></i><span>Skill</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Slider" ? "active": "")">
+                            <a asp-controller="Slider" asp-action="Index"><i class="fab fa-slideshare"></i><span>Slider</span></a>
+                        </li>
+                        <li class="@(ViewBag.Active=="Social" ? "active": "")">
+                            <a asp-controller="Social" asp-action="Index"><i class="fas fa-share-alt"></i><span>Social</span></a>
+                        </li>
+
+
+
+
+
+                        <li class="menu-title">
+                            <span>UI Interface</span>
+                        </li>
+                        <li>
+                            <a href="~/areas/admin/components.html"><i class="feather-layers"></i> <span>Components</span></a>
+                        </li>
+                        <li class="submenu">
+                            <a href="~/areas/admin/#"><i class="feather-sidebar"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="~/areas/admin/form-basic-inputs.html">Basic Inputs </a></li>
+                                <li><a href="~/areas/admin/form-input-groups.html">Input Groups </a></li>
+                                <li><a href="~/areas/admin/form-horizontal.html">Horizontal Form </a></li>
+                                <li><a href="~/areas/admin/form-vertical.html"> Vertical Form </a></li>
+                                <li><a href="~/areas/admin/form-mask.html"> Form Mask </a></li>
+                                <li><a href="~/areas/admin/form-validation.html"> Form Validation </a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="~/areas/admin/#"><i class="feather-layout"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="~/areas/admin/tables-basic.html">Basic Tables </a></li>
+                                <li><a href="~/areas/admin/data-tables.html">Data Table </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        @RenderBody()
+
+    </div>
+
+    <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+
+    <script src="~/areas/admin/assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="~/areas/admin/assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/areas/admin/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="~/areas/admin/assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="~/areas/admin/assets/plugins/apexchart/dsh-apaxcharts.js"></script>
+
+    <script src="~/areas/admin/assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+    <script src="~/areas/admin/assets/js/calander.js"></script>
+
+    <script src="~/areas/admin/assets/js/script.js"></script>
+
+</body>
+
+<!-- Mirrored from emr.dreamguystech.com/html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 27 Aug 2021 09:15:30 GMT -->
+</html>

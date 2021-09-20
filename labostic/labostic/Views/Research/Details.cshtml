@@ -1,0 +1,221 @@
+﻿@model VmResearchTwo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2>Research Detail</h2>
+                </div>
+                <div class="breadcrumb">
+                    <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                    <span class="details">Research Details</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="research-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="content-researchdet">
+                    <h4>Project Details</h4>
+                    <p>
+                               @Model.Research.Desc
+                    </p>
+                   
+                </div>
+
+            </div>
+            <div class="col-lg-8" id="bigimg">
+                <div class="picture">
+                    <img src="/image/services-01-1000x450.jpg" alt="">
+                    <div class="icon">
+                        <a href=""><i id="rdetailimg" class="fas fa-expand-alt"></i></a>
+
+                    </div>
+                    <div class="getVideo">
+                        <div class="Iframe">
+                            <img src="/image/services-01-1000x450.jpg" alt="">
+                            <div class="icon-video">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12" id="smallD">
+                <div class="small-detail ">
+                    <div class="small-box">
+                        <ul>
+                            <li>
+                                <i class="far fa-user"></i>
+                                <h5>Writer</h5>
+                               
+                                @foreach (var item in Model.Research.WriterToResearch)
+                                {
+                                    <p>@item.Writer.Fullname</p>
+                                }
+
+                            </li>
+                            <li>
+                                <i class="far fa-calendar-alt"></i>
+                                <h5>Year Date</h5>
+                                <p>@Model.Research.Date</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h5>Loaction</h5>
+                                <p>
+                                    @Model.Research.Location
+                                </p>
+                            </li>
+                            <li>
+                                <i class="far fa-edit"></i>
+                                <h5>Category</h5>
+                                <p>
+                                    @Model.Research.ResearchCategory.Name
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8" id="squar">
+                <div class="suqar-detail">
+
+                    <h4>
+                        De Finibus Bonorum et Malorum procure him great pleasure.
+                    </h4>
+                    <p>
+                        Nemo enim ipsam voluptatem quia voluptas atus error sit voluptatem accusantium doloremque
+                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore sit aspernatur aut odit aut
+                        fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+
+                    </p>
+                    <ul id="squar-ul">
+                        @foreach (var item in Model.ResearchSquar)
+                        {
+                            <li>
+                                <i class="@item.Icon"></i>
+                                <p>
+                                   @item.Desc
+
+
+                                </p>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6" id="squar-img">
+                <div class="picture">
+                    <img src="/@Model.Research.ImageResDet" alt="" id="suqar-picture">
+
+                </div>
+                <div class="content">
+                    <h5>
+                        Delivering the Answers Patients Expect
+                    </h5>
+                    <div class="icon">
+                        <a href="">
+                            <i class="fas fa-chevron-circle-right"></i>
+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="adventag">
+                <div class="col-lg-12">
+                    <div class="content-adventag">
+                        <h4>@Model.Research.ResearchAdvTitle</h4>
+                        
+                        <p>
+                           @Model.Research.ResearchAdvDesc
+
+
+                        </p>
+                        <div class="social">
+                            <div class="title">
+                                <h4>
+                                    Share This Projects :
+                                </h4>
+                                <ul>
+                                    @foreach (var item in Model.Social)
+                                    {
+                                        <li><a href=""> <i class="@item.Icon"></i></a></li>
+
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="line">
+                            <span class="holder">
+                                <div class="spantow">
+
+                                </div>
+
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="research-diffirentstyle">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in Model.Researches.Take(3))
+                        {
+                            <div class="col-lg-4 col-md-4 col-sm-6  item">
+                                <div class="res-difsty">
+                                    <div class="res-difstyimg">
+                                        <div class="thubnail">
+                                            <a href=""><img src="/image/@item.Image" alt=""></a>
+                                        </div>
+                                        <div class="iconbox">
+                                            <a href="">
+                                                <i class="fas fa-expand-alt"></i>
+                                            </a>
+                                            <a href="researchdetail.html">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                        </div>
+                                        <span>@item.ResearchCategory.Name</span>
+
+                                    </div>
+                                    <div class="res-difstycont">
+                                        <div class="res-difstytitle">
+                                            <h5>
+                                                <a asp-controller="Research" asp-action="Details">
+                                                    @item.Title
+                                                </a>
+                                            </h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

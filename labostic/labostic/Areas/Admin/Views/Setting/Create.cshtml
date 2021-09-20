@@ -1,0 +1,197 @@
+﻿@model Labostic.Models.Setting
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Setting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Basic Inputs</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" asp-controller="Setting" asp-action="create" enctype="multipart/form-data">
+                            <div asp-validation-summary="All" style="color:red; margin-bottom:30px;"></div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFile">Img Nav</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFile" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileFooter">Img Footer</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileFooter" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Footer About</label>
+                                <div class="col-md-10">
+                                    <input asp-for="About" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Phone Number One</label>
+                                <div class="col-md-10">
+                                    <input asp-for="PhoneNumOne" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Phone Number Two</label>
+                                <div class="col-md-10">
+                                    <input asp-for="PhoneNumTwo" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Address</label>
+                                <div class="col-md-10">
+                                    <input asp-for="Address" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Work Hours</label>
+                                <div class="col-md-10">
+                                    <input asp-for="WorkHours" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Email Nav</label>
+                                <div class="col-md-10">
+                                    <input asp-for="EmailNav" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Email Footer</label>
+                                <div class="col-md-10">
+                                    <input asp-for="EmailFooter" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">About Title</label>
+                                <div class="col-md-10">
+                                    <input asp-for="AboutTitle" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">About Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="AboutDesc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileAbout">Img About</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileAbout" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileAboutSign">Img About Sign</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileAboutSign" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Title</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeTitle" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeDesc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileHome">Img Home</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileHome" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeLeftSTitle" class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Left S Desc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeLeftSDesc" class="form-control">
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileHomeLeftS">Img Left S</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileHomeLeftS" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Right S Title</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeRighttSTitle" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2">Home Right SDesc</label>
+                                <div class="col-md-10">
+                                    <input asp-for="HomeRightSDesc" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-md-2" asp-for="ImageFileHomeRightS">Img Right S</label>
+                                <div class="col-md-10">
+                                    <input asp-for="ImageFileHomeRightS" class="input w-full border mt-2">
+
+                                </div>
+                            </div>
+                            <div class="text-right mt-5">
+                                <a asp-area="admin" asp-controller="Setting" asp-action="index" style="border-radius:6px; padding:12px 19px 15px 14px;" class="button w-24 border text-gray-700 mr-1">Cancel</a>
+                                <button type="submit" style="background:#323584; border:none; padding: 12px 35px 14px 30px; border-radius: 10px ;" class="button w-24 bg-theme-1 text-white">Create</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

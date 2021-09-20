@@ -1,0 +1,273 @@
+﻿@model VmTeamTwo
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="banner">
+    <div class="container"> 
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2>Team Details</h2>
+                </div>
+                <div class="breadcrumb">
+                    <span class="passage"><a href="index.html" style="text-decoration: none;">Home</a></span>
+                    <span class="details">Team Details</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about">
+    <div class="clear">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 col-md-5">
+                    <div class="picture">
+                        <img src="/image/@Model.Doctor.Image" alt="">
+
+                    </div>
+                    <div class="call">
+                        <h5>Call Us: 123-456-79890</h5>
+                    </div>
+                </div>
+                <div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                    <div class="information">
+                        <h2>
+                            Personal Information
+                        </h2>
+                        <div class="detail">
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <h5>Doctor Name: </h5>
+
+                                    </div>
+                                    <h5 class="value">@Model.Doctor.Fullname</h5>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <h5>Primary Specialty: </h5>
+
+                                    </div>
+                                    <h5 class="value"> Laboratary Assitance</h5>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <h5>Experiance: </h5>
+
+                                    </div>
+                                    <h5 class="value">@Model.Doctor.Experience Years</h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-person">
+                            <div class="hr">
+                                <span class="holder">
+                                    <span class="line">
+
+                                    </span>
+                                </span>
+                            </div>
+
+                            <h2>Education & Training</h2>
+                            <ul>
+                                <li>
+                                    <div class="title">
+                                        <h5>
+                                            Medical Education:
+                                        </h5>
+
+                                    </div>
+                                    <h5 class="value">
+                                        @Model.Doctor.MedicalEdu
+                                    </h5>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <h5>Residency: </h5>
+
+                                    </div>
+                                    <h5 class="value">
+                                        @Model.Doctor.Residency
+                                    </h5>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <h5>Certifications: </h5>
+
+                                    </div>
+                                    <h5 class="value">
+                                        @Model.Doctor.Certification
+                                    </h5>
+                                </li>
+                                <li>
+                                    <div class="title">
+                                        <h5>
+                                            Practice Areas:
+                                        </h5>
+
+                                    </div>
+                                    <h5 class="value">
+                                        @Model.Doctor.PraticArea
+                                </h5>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hr">
+                        <span class="holder">
+                            <span class="line">
+
+                            </span>
+                        </span>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            @foreach (var item in Model.Social)
+                            {
+                                @foreach (var std in item.SocialToDoctor)
+                                {
+                                    <li class="fb">
+                                        <span class="tooltipin"></span>
+
+                                        <a href="@std.Link"><i class="@std.Social.Icon"></i></a>
+                                    </li>
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12   ">
+                <div class="biography">
+                    <div class="title">
+                        <h2>
+                            Biography
+
+                        </h2>
+                    </div>
+                    <p>
+                      @Html.Raw( @Model.Doctor.BiographyDesc)
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="experience">
+    <div class="under-experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <div class="Uptitle">
+                        <h2>Work Experience & Skills</h2>
+                    </div>
+                </div>
+                <div class=" col-lg-6 col-md-12">
+                    @foreach (var item in Model.Doctor.SkillToDoctor)
+                    {
+                    <div class="progressbar">
+                        <div class="comma">
+                            <div class="title">
+                                <p>
+                                    @item.Skill.Name
+                                </p>
+                            </div>
+                            <div class="inner">
+                                <div class="length" per="@item.Percent" style="width:@item.Percent%;"></div>
+                            </div>
+                            <div class="percent">@item.Percent%</div>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <div class=" col-lg-6">
+                    <div class="care">
+                        @foreach (var item in Model.Experience)
+                        {
+                            <div class="feature">
+                                <div class="icon">
+                                    <i class="@item.Icon"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>
+                                        @item.Title
+                                    </h5>
+                                    <p>
+                                       @item.Desc
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="award">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="award-title">
+                    <h2>
+                        Doctors
+                        <br>
+                        Achievements
+                    </h2>
+                </div>
+                <p>
+                    @Model.Doctor.AchievementDesc
+                </p>
+            </div>
+            <div class="col-lg-8">
+                <div class="award-box">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="picture">
+                                <img src="/image/award-one.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="picture">
+                                <img src="/image/award-three.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="picture">
+                                <img src="/image/award-two.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="border-left">
+                                <img src="/image/award-two.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class=" border-left">
+                                <img src="/image/award-one.png" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class=" border-left">
+                                <img src="/image/award-three.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

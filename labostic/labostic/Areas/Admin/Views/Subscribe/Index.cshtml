@@ -1,0 +1,101 @@
+﻿@model List<Labostic.Models.Subscribe>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <h5 class="page-title">Dashboard</h5>
+                        <ul class="breadcrumb ml-2">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Doctor Dashboard</a></li>
+                            <li class="breadcrumb-item active">Appointments</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-auto text-right">
+                    <a class="btn btn-white filter-btn" href="javascript:void(0);" id="filter_search">
+                        <i class="feather-filter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <form action="#" method="post" id="filter_inputs">
+            <input type="hidden" name="csrf_token_name" value="4a0efd10c152f3f6117fec6b1be8e87e" />
+            <div class="card filter-card">
+                <div class="card-body pb-0">
+                    <div class="row filter-row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Patient ID</label>
+                                <input class="form-control" type="text" name="from">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Patient Name</label>
+                                <input class="form-control" type="text" name="from">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="form-group">
+                                <label>Date</label>
+                                <input class="form-control" type="text" name="to">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Number</th>
+                                        <th>Email</th>
+                                        <th>Date</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{ int i = 0;}
+
+                                    @foreach (var item in Model)
+                                    {
+                                        i++;
+
+                                    <tr>
+                                        <td>
+                                            @i
+                                        </td>
+                                        <td>@item.Email</td>
+                                        <td>@(item.CreatedDate!=null? item.CreatedDate.ToString("dd.MM.yyyy"):"")</td>
+                                        <td class="text-right d-flex">
+                                        </td>
+
+                                    </tr>
+
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

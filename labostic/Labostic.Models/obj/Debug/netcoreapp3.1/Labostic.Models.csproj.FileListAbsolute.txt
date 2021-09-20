@@ -1,0 +1,36 @@
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.deps.json
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfo.cs
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.json
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.dev.json
+C:\Users\User\OneDrive\Masaüstü\FinalDatabase\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.genruntimeconfig.cache
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.deps.json
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.json
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.dev.json
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfo.cs
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\Ali\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.genruntimeconfig.cache
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.deps.json
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.json
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.runtimeconfig.dev.json
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\bin\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csprojAssemblyReference.cache
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.AssemblyInfo.cs
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.dll
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.pdb
+C:\Users\User\OneDrive\Masaüstü\New folder (2)\labostic\Labostic.Models\obj\Debug\netcoreapp3.1\Labostic.Models.genruntimeconfig.cache

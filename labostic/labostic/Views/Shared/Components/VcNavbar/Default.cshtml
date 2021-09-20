@@ -1,0 +1,243 @@
+﻿@model VmNavbar
+@{
+    Layout = null;
+}
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="left">
+                    <div class="number">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        +123 456 7890
+                    </div>
+                    <div class="mail">
+                        <div class="icon">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <a href="mailto:yourdomain@gmail.com">yourdomain@gmail.com</a>
+                    </div>
+                    <div class="work-period">
+                        <div class="icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        Working Hours - Mon - Fri: 9:30 - 18:30
+                    </div>
+                    <div class="social">
+                        <ul class="social-ul">
+                            <li class="fb">
+
+
+                                <a href="https://www.facebook.com/">
+                                    <i class="fab fa-facebook-f"
+                                       style="color: white;"></i>
+                                </a>
+                            </li>
+                            <li class="tw">
+                                <a href="http://twitter.com/">
+                                    <i class="fab fa-twitter"
+                                       style="color: white;"></i>
+                                </a>
+                            </li>
+                            <li class="fl">
+                                <a href="https://www.flickr.com/">
+                                    <i class="fab fa-flickr"
+                                       style="color: white;"></i>
+                                </a>
+                            </li>
+                            <li class="lin">
+                                <a href="https://www.linkedin.com/">
+                                    <i class="fab fa-linkedin-in"
+                                       style="color: white;"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<nav class="navbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-menu">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="~/image/logo-img.png" alt="">
+                        </a>
+                    </div>
+
+                    <div class="menu">
+                        <ul>
+                            <li class="@(ViewBag.Active=="Home" ? "active-nav": "") nav-main">
+                                <a asp-controller="home" asp-action="index" class="underline">Home</a>
+                            </li>
+                            <li class="nav-main @(ViewBag.Active=="About" ? "active-nav": "")">
+                                <a class="underline" asp-controller="about" asp-action="index">About</a>
+
+                            </li>
+                            <li class="services nav-main @(ViewBag.Active=="Services" ? "active-nav": "")">
+                                <a asp-controller="services" asp-action="index" class="underline">Services</a>
+
+                            </li>
+                            <li class="nav-main @(ViewBag.Active=="Team" ? "active-nav": "")">
+                                <a asp-controller="team" asp-action="index" class="underline">Team</a>
+
+                            </li>
+                            <li class="nav-main @(ViewBag.Active=="Research" ? "active-nav": "")">
+                                <a asp-controller="research" asp-action="index" class="underline">Research</a>
+
+                            </li>
+                            <li class="nav-main">
+                                <a asp-controller="faq" asp-action="index" class="underline">Faq</a>
+
+                            </li>
+                            <li class="nav-main">
+                                <a asp-controller="contact" asp-action="index" class="underline">Contact</a>
+
+                            </li>
+                            <li class="nav-main">
+                                <a asp-controller="analysis" asp-action="index" class="underline">Analysis</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="extra">
+                        <div class="appointment">
+                            <button href="" id="a-appoint">
+                                <i class="far fa-calendar-alt"></i>
+                                Appointment
+                            </button>
+
+                            <div class="addition-appointment" id="addition-appointment1">
+                                <h3>
+                                    Keep in touch!
+                                </h3>
+                                <form  method="post" asp-controller="Home" asp-action="Appointment"  >
+                                    <div asp-validation-summary="All"></div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="text-input">
+                                                <i class="far fa-user"></i>
+                                                <input asp-for="@Model.Appointment.Fullname" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-input">
+                                                <i class="fas fa-phone-alt"></i>
+                                                <input asp-for="@Model.Appointment.PhoneNumber" placeholder="Phone Number">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-input">
+                                                <i class="far fa-envelope"></i>
+                                                <input asp-for="@Model.Appointment.Email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-input">
+                                                <i class="far fa-calendar-alt"></i>
+                                                <input  asp-for="@Model.Appointment.CreatedDate" placeholder="07/29/2021/5:50">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-input">
+                                                <i class="fas fa-user-md"></i>
+                                                <select asp-for="@Model.Appointment.DoctorId">
+                                                    <option disabled selected hidden>Which Doctor?</option>
+                                                    @foreach (var item in Model.Doctor)
+                                                    {
+                                                        <option value="@item.Id">@item.Fullname</option>
+
+                                                    }
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+
+                                            <button type="submit">Book appointment</button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="search">
+                            <a href="" id="searchTg">
+                                <i class="fas fa-search" id="custom-searchbtn"></i>
+                            </a>
+                            <div class="addition-search">
+                                <form asp-controller="Research" asp-action="index" method="get">
+                                    <input type="text" placeholder="Enter Keyword" name="searchData">
+                                    <button type="submit">
+                                        <i class="fas fa-search-plus"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="about">
+                        <div id="ulUp">
+
+                            <div class="menu-items">
+                                <a href="" class="menu"><i class="fas fa-bars"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="mobile-menu">
+                        <ul>
+
+
+                            <li>
+                                <a href="home.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="about.html">About</a>
+
+                            </li>
+                            <li>
+                                <a href="serviceOne.html">Services</a>
+
+
+
+                            </li>
+                            <li>
+                                <a href="team.html">Team</a>
+
+                            </li>
+                            <li>
+                                <a href="research.html">Research</a>
+
+                            </li>
+                            <li>
+                                <a href="faq.html">Faq</a>
+
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+
+                            </li>
+                            <li>
+                                <a href="check.html">Analysis</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</nav>
